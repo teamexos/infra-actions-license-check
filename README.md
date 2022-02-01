@@ -1,4 +1,5 @@
-# tangro/actions-license-check
+# teamexos/infra-actions-license-check
+Forked from tangro/actions-license-check to change some specific defaults.
 
 A @tangro action to check whether a dependency uses an allowed license. We use [license-checker](https://www.npmjs.com/package/license-checker) to retrieve the license of the dependencies.
 
@@ -7,14 +8,13 @@ By default these licenses are allowed:
 - `MIT`
 - `Apache-2.0`
 - `ISC`
-- `Custom: https://www.telerik.com/kendo-angular-ui/`
 - `BSD`
 
 > **Important** We only check production dependencies and only 0 direct production dependencies
 
 # Version
 
-You can use a specific `version` of this action. The latest published version is `v1.0.7`. You can also use `latest` to always get the latest version.
+You can use a specific `version` of this action. The latest published version is `v1.0.8`. You can also use `latest` to always get the latest version. Latest is recommended.
 
 # Example job
 
