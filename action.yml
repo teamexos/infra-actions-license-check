@@ -1,6 +1,6 @@
 name: 'actions-license-check'
 description: 'Action to check the repo for (production) dependencies that have an disallowed license'
-author: 'tangro'
+author: 'teamexos'
 inputs:
   allowed-licenses:
     description: 'The list of allowed licenses. Use semicolons to separate licenses.'
