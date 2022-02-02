@@ -1,9 +1,6 @@
 name: update dependencies
 
-on:
-  schedule:
-    - cron: 30 5 * * 2
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   update-dependencies:
