@@ -7,7 +7,7 @@ inputs:
     required: false
     default: >
       MIT; MIT-0; MIT*; Apache-2.0; Apache 2.0; ISC; 0BSD; BSD; BSD-3-Clause; BSD-2-Clause; 
-      CC-BY-3.0; CC-BY-4.0; Zlib; WTFPL; PSF; Unlicense; UNLICENSED; 
+      CC-BY-3.0; CC-BY-4.0; Zlib; WTFPL; PSF; Unlicense; UNLICENSED; UNKNOWN; 
       Custom: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry; 
       Custom: https://npm.pkg.github.com
 runs:
