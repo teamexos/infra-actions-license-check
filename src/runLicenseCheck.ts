@@ -36,7 +36,7 @@ export async function runLicenseCheck({
       '--production',
       '--json',
       `--onlyAllow=${allowedLicenses},
-      --excludePackages='prince-dev-tools@0.0.5;prince-sdk@2.2.0;cli-color@0.1.7'`
+      --excludePackages='prince-backend@0.0.0;prince-mobile@1.0.14;prince-dev-tools@0.0.5;prince-sdk@2.2.0;cli-color@0.1.7'`
     ],
     options
   );
