@@ -8,9 +8,10 @@ inputs:
     default: >
       AFLv2.1; AFLv3.1; Apache-2.0; Apache 2.0; Apache-1.1; Apache 1.1; 0BSD; BSD; BSD-3-Clause; BSD-2-Clause; 
       BSL-1.0; EUDatagrid; EFL-1.0; EFL-2.0; Intel; ISC; LPPL-1.2; LPPL-1.3a; MIT; MIT-0; MIT*; MS-PL; Nunit; 
-      PHP-3.0; Python-2.0; PSF-2.0; NCSA; Unlicense; UNLICENSED; UNKNOWN; W3C; X11; WTFPL; XFree86-1.1; 
+      Public Domain; PHP-3.0; Python-2.0; PSF-2.0; NCSA; Unlicense; UNLICENSED; UNKNOWN; W3C; X11; WTFPL; XFree86-1.1; 
       Zlib; ZPL-2.0; CC-BY-2.0; CC-BY-2.5; CC-BY-3.0; CC-BY-4.0; MPL-2.0; MPL-1.1; MPL-1.0; GPL-3.0; GPL-2.0; 
-      Apache-1.0; CPL-1.0; IPL-1.0; CDDL-1.0; CDDL-1.1; LGPL-2.1; EPL-2.0; EPL-1.0; Custom: https://npm.pkg.github.com;
+      Apache-1.0; CPL-1.0; IPL-1.0; CDDL-1.0; CDDL-1.1; LGPL-2.1; EPL-2.0; EPL-1.0; 
+      Custom: https://npm.pkg.github.com; Custom: https://github.com/aws-amplify/amplify-js; 
 runs:
   using: 'node12'
   main: 'dist/index.js'
