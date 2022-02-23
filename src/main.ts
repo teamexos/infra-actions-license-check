@@ -26,8 +26,8 @@ async function run() {
 
   try {
     await wrapWithSetStatus(context, 'license-check', async () => {
-      const allowedLicenses = core.getInput('allowed-licenses');
-      const output = await runLicenseCheck({ context, allowedLicenses });
+      const failLicenses = core.getInput('fail-licenses');
+      const output = await runLicenseCheck({ context, failLicenses });
       fs.mkdirSync('license-check');
       fs.writeFileSync(
         path.join('license-check', 'index.html'),

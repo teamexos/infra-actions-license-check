@@ -52,7 +52,7 @@ Steps this example job will perform:
 
 # Usage
 
-This action will run `npx license-checker --production --json --onlyAllow=${allowedLicenses}` to check the licenses.
+This action will run `npx license-checker --production --json --onlyAllow=${failLicenses}` to check the licenses.
 
 This action will set a status to the commit to `pending` under the context `Tangro CI/license-check`. When it finishes successfully it will change the status to `success` and the license-check result will be displayed in the description. If the license check fails the status will set the status to `failed`.
 
