@@ -2,13 +2,16 @@ import { exec } from '@actions/exec';
 import { ExecOptions } from '@actions/exec/lib/interfaces';
 import { GitHubContext } from '@tangro/tangro-github-toolkit';
 import path from 'path';
+import * as core from '@actions/core';
 
 export async function runLicenseCheck({
   context,
-  failLicenses
+  failLicenses,
+  subDir
 }: {
   context: GitHubContext<{}>;
   failLicenses: string;
+  subDir: string;
 }) {
   const [owner, repo] = context.repository.split('/');
 
@@ -17,7 +20,7 @@ export async function runLicenseCheck({
 
   const options: ExecOptions = {
     ignoreReturnCode: true,
-    cwd: path.join(process.env.RUNNER_WORKSPACE as string, repo),
+    cwd: path.join(process.env.RUNNER_WORKSPACE as string, repo, subDir),
     listeners: {
       stdout: data => {
         stdout += data.toString();
@@ -27,6 +30,8 @@ export async function runLicenseCheck({
       }
     }
   };
+
+  core.info(`CWD: ${options.cwd}`)
 
   await exec(
     'npx',

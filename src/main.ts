@@ -27,7 +27,8 @@ async function run() {
   try {
     await wrapWithSetStatus(context, 'license-check', async () => {
       const failLicenses = core.getInput('fail-licenses');
-      const output = await runLicenseCheck({ context, failLicenses });
+      const subDir = core.getInput('sub-dir');
+      const output = await runLicenseCheck({ context, failLicenses, subDir });
       fs.mkdirSync('license-check');
       fs.writeFileSync(
         path.join('license-check', 'index.html'),
@@ -42,20 +43,22 @@ async function run() {
       };
     });
   } catch (error) {
-    core.setFailed(error.message);
-    fs.mkdirSync('license-check');
-    fs.writeFileSync(
-      path.join('license-check', 'index.html'),
-      `<html><body><pre><code>${error.message}</code></pre></body></html>`
-    );
-    core.info('output written to license-check');
+    if (error instanceof Error) {
+      core.setFailed(error.message);
+      fs.mkdirSync('license-check');
+      fs.writeFileSync(
+        path.join('license-check', 'index.html'),
+        `<html><body><pre><code>${error.message}</code></pre></body></html>`
+      );
+      core.info('output written to license-check');
 
-    await setStatus({
-      context,
-      description: error.message,
-      state: 'failure',
-      step: 'license-check'
-    });
+      await setStatus({
+        context,
+        description: error.message,
+        state: 'failure',
+        step: 'license-check'
+      });
+    }
   }
 }
 
