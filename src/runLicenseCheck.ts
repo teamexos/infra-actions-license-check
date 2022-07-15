@@ -19,7 +19,7 @@ export async function runLicenseCheck({
 
   const options: ExecOptions = {
     ignoreReturnCode: true,
-    cwd: path.join(process.env.RUNNER_WORKSPACE as string, subDir,repo),
+    cwd: path.join(process.env.RUNNER_WORKSPACE as string, repo, subDir),
     listeners: {
       stdout: data => {
         stdout += data.toString();
@@ -41,8 +41,6 @@ export async function runLicenseCheck({
     ],
     options
   );
-
-  stderr += options.cwd
 
   if (stderr.length > 0) {
     throw new Error(stderr);
