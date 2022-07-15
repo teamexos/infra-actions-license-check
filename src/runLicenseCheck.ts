@@ -2,6 +2,7 @@ import { exec } from '@actions/exec';
 import { ExecOptions } from '@actions/exec/lib/interfaces';
 import { GitHubContext } from '@tangro/tangro-github-toolkit';
 import path from 'path';
+import * as core from '@actions/core';
 
 export async function runLicenseCheck({
   context,
@@ -29,6 +30,8 @@ export async function runLicenseCheck({
       }
     }
   };
+
+  core.info(`CWD: ${options.cwd}`)
 
   await exec(
     'npx',
