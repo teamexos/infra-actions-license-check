@@ -5,10 +5,12 @@ import path from 'path';
 
 export async function runLicenseCheck({
   context,
-  failLicenses
+  failLicenses,
+  subDir
 }: {
   context: GitHubContext<{}>;
   failLicenses: string;
+  subDir: string;
 }) {
   const [owner, repo] = context.repository.split('/');
 
@@ -17,7 +19,7 @@ export async function runLicenseCheck({
 
   const options: ExecOptions = {
     ignoreReturnCode: true,
-    cwd: path.join(process.env.RUNNER_WORKSPACE as string, repo),
+    cwd: path.join(process.env.RUNNER_WORKSPACE as string, subDir,repo),
     listeners: {
       stdout: data => {
         stdout += data.toString();
