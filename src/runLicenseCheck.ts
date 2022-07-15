@@ -30,6 +30,8 @@ export async function runLicenseCheck({
     }
   };
 
+  console.log('cwd: ', options.cwd)
+
   await exec(
     'npx',
     [
