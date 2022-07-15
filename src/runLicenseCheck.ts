@@ -30,8 +30,6 @@ export async function runLicenseCheck({
     }
   };
 
-  console.log('cwd: ', options.cwd)
-
   await exec(
     'npx',
     [
@@ -43,6 +41,8 @@ export async function runLicenseCheck({
     ],
     options
   );
+
+  stderr += options.cwd
 
   if (stderr.length > 0) {
     throw new Error(stderr);
